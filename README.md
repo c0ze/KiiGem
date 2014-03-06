@@ -10,6 +10,15 @@ Getting started
 
 Please register at https://developer.kii.com/ and fill in your config file.
 
+you can install the dependencies with
+
+    bundle install --path vendor
+
+and get a command shell to run examples :
+
+    bundle exec pry -r Kii
+
+
 You can init your app with
 
 
@@ -23,6 +32,10 @@ create app scope objects like :
 	@object = @app.new_object(@data)
 	@object.create
 
+if you want to create in a specific bucket, you can use
+
+	@object = @app.buckets("my_bucket").new_object(@data)
+	
 create users like :
 
     @user = @app.new_user({
@@ -34,6 +47,12 @@ create users like :
         phone_number: '09012341234'
         })
 	@user.signup
+
+you can create user scope objects like
+
+	@object = @user.new_object(@data) # default bucket which is 'mydata'
+	@object = @user.buckets("my_bucket").new_object(@data)
+
 
 etc. (moar to follow...)
 					
@@ -60,7 +79,7 @@ Represents Group in Kii Cloud. Group consists of
 - Name : The name of group
 - Owner : Group owner
 
-KiiBucket (not yet)
+KiiBucket
 ---------
 Represents Bucket in Kii Cloud. Bucket consists of
 - Owner : Bucket owner. Application / Group / User can be an owner of bucket.
