@@ -2,8 +2,8 @@ module KiiObjectPersistance
   class KiiObject
     attr_accessor :id, :version, :created, :modified, :owner, :data, :type, :app
 
-    def initialize data, app, path
-      @app = app
+    def initialize data, context, path
+      @context = context
       @data = data
       @path = path
     end
@@ -26,25 +26,25 @@ module KiiObjectPersistance
     end
 
     def create
-      response = @app.request(:post, @path, @data.to_json)
+      response = @context.request(:post, @path, @data.to_json)
       self.init(JSON.parse response)
       response
     end
 
     def get
-      response = @app.request :get, "#{@path}/#{@id}"
+      response = @context.request :get, "#{@path}/#{@id}"
       init JSON.parse response
       response
     end
 
     def delete
       headers = {"If-Match" => @version}
-      response = @app.request :delete, "#{@path}/#{@id}", nil, headers
+      response = @context.request :delete, "#{@path}/#{@id}", nil, headers
     end
 
     def update
       headers = {"If-Match" => @version}
-      response = @app.request :put, "#{@path}/#{@id}", @data.to_json, headers
+      response = @context.request :put, "#{@path}/#{@id}", @data.to_json, headers
       @version += 1
       response
     end
@@ -53,7 +53,7 @@ module KiiObjectPersistance
     # just make your changes locally and do update ?
     def patch
       headers = {"If-Match" => @version}
-      response = @app.request :patch, "#{@path}/#{@id}", @data.to_json, headers
+      response = @context.request :patch, "#{@path}/#{@id}", @data.to_json, headers
       @version += 1
       response
       #      'X-HTTP-Method-Override' => 'PATCH'

@@ -8,10 +8,11 @@ require_relative 'constants'
 require_relative 'kii_object'
 require_relative 'kii_user'
 require_relative 'kii_api'
+require_relative 'kii_bucket'
 
 class KiiApp
 
-  attr_accessor :access_token, :app_admin_token, :app_id, :app_key, :client_id, :client_secret, :app_name, :mail_address, :description, :debug, :log
+  attr_accessor :access_token, :paths, :app_id, :app_key, :client_id, :client_secret, :app_name, :mail_address, :description, :debug, :log
 
   include KiiObjectPersistance
   include KiiUserPersistance
@@ -20,9 +21,15 @@ class KiiApp
 
   @@conf_keys = ['app_id', 'app_key', 'client_id', 'client_secret']
 
+
   def initialize
     configure
-    @log = Logger.new STDOUT
+    @@log = Logger.new STDOUT
+    @paths = {
+      token:    "#{API_END_POINT}/oauth2/token",
+      app:      "#{API_END_POINT}/apps/#{@app_id}",
+      user:     "#{API_END_POINT}/apps/#{@app_id}/users"
+    }
   end
 
   def configure
@@ -37,21 +44,26 @@ class KiiApp
   end
 
   def get_admin_token
-    @log.debug "#{__method__}: #{@app_id} #{@app_key} #{@client_id} #{@client_secret}"
+    @@log.debug "#{__method__}: #{@app_id} #{@app_key} #{@client_id} #{@client_secret}"
 
     d = {'client_id' => @client_id, 'client_secret' => @client_secret}.to_json
-    response = request :post, token_path, d
+    response = request :post, @paths[:token], d
 
-    @app_admin_token = (JSON.parse response)['access_token']
+    @access_token = (JSON.parse response)['access_token']
     response
   end
 
-  def new_object data
-    super data, self, app_data_path
+  def buckets bucket_name
+    KiiBucket.new(bucket_name, self, "#{@paths[:app]}")
   end
 
+  def new_object data, bucket = "applicationMaster"
+    buckets(bucket).new_object data
+  end
+
+
   def new_user args
-    super args, self, user_path
+    super args, self, @paths[:user]
   end
 
 end

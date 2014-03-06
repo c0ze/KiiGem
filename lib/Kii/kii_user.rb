@@ -1,4 +1,5 @@
 require_relative 'kii_api'
+require_relative 'kii_bucket'
 require_relative 'kii_object'
 
 module KiiUserPersistance
@@ -14,6 +15,8 @@ module KiiUserPersistance
         instance_variable_set("@#{k}", v) unless v.nil?
       end
       @app = app
+      @app_id = app.app_id
+      @app_key = app.app_key
       @path = path
     end
 
@@ -43,13 +46,17 @@ module KiiUserPersistance
 
     def get_token
       d = {username: @login_name, password: @password}
-      response = @app.request :post, token_path, d.to_json
+      response = request :post, @app.paths[:token], d.to_json
       @access_token = (JSON.parse response)['access_token']
       response
     end
 
-    def new_object data
-      KiiObject.new data, @app, @path
+    def buckets bucket_name
+      KiiBucket.new(bucket_name, self, "#{@path}/me")
+    end
+
+    def new_object data, bucket = "mydata"
+      buckets(bucket).new_object data
     end
 
     def object minimum = false
