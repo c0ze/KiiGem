@@ -1,11 +1,13 @@
 require_relative 'kii_api'
 require_relative 'kii_bucket'
 require_relative 'kii_object'
+require_relative 'kii_group'
 
 module KiiUserPersistance
   class KiiUser
 
     include KiiAPI
+    include KiiGroupPersistance
     include KiiObjectPersistance
 
     attr_accessor :login_name, :display_name, :country, :password, :email, :phone_number, :id, :access_token
@@ -52,11 +54,18 @@ module KiiUserPersistance
     end
 
     def buckets bucket_name
+      get_token unless @access_token
       KiiBucket.new(bucket_name, self, "#{@path}/me")
     end
 
     def new_object data, bucket = "mydata"
+      get_token unless @access_token
       buckets(bucket).new_object data
+    end
+
+    def new_group name, members = []
+      get_token unless @access_token
+      KiiGroup.new({name: name, owner: @id, members: members}, self, "#{@app.paths[:app]}/groups")
     end
 
     def object minimum = false

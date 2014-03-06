@@ -15,4 +15,18 @@ class KiiBucket
   def new_object data
     KiiObject.new data, @context, "#{@path}/buckets/#{@name}/objects"
   end
+
+  def get_objects
+    headers = {
+      content_type: "application/vnd.kii.QueryRequest+json"
+    }
+    data = {
+      bucketQuery: {
+        clause: {
+          type: :all
+        }
+      }
+    }
+    @context.request :post, "#{@path}/buckets/#{@name}/query", data.to_json, headers
+  end
 end
