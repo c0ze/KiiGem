@@ -1,3 +1,5 @@
+require 'logger'
+
 require 'Kii/constants'
 require 'Kii/kii_api'
 require 'Kii/kii_app'
