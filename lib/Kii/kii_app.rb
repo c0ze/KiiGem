@@ -17,18 +17,18 @@ class KiiApp
   include KiiObjectPersistance
   include KiiUserPersistance
   include KiiAPI
-  
 
-  @@conf_keys = ['app_id', 'app_key', 'client_id', 'client_secret']
+
+  @@conf_keys = ['app_id', 'app_key', 'client_id', 'client_secret', 'country']
 
 
   def initialize
     configure
     @@log = Logger.new STDOUT
     @paths = {
-      token:    "#{API_END_POINT}/oauth2/token",
-      app:      "#{API_END_POINT}/apps/#{@app_id}",
-      user:     "#{API_END_POINT}/apps/#{@app_id}/users"
+      token:    "#{@@api_backend}/oauth2/token",
+      app:      "#{@@api_backend}/apps/#{@app_id}",
+      user:     "#{@@api_backend}/apps/#{@app_id}/users"
     }
   end
 
@@ -41,6 +41,18 @@ class KiiApp
       end
       instance_variable_set("@#{key}", config[key]) unless config[key].nil?
     }
+    set_api_backend
+  end
+
+  def set_api_backend
+    case @country
+    when 'us'
+      @@api_backend = KII_US
+    when 'jp'
+      @@api_backend = KII_JP
+    else
+      raise "Unknown API Backend"
+    end
   end
 
   def get_admin_token
