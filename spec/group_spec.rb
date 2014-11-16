@@ -50,12 +50,11 @@ describe KiiGroupPersistance::KiiGroup do
 
       context 'default bucket' do
 
-        before(:all) do 
+        before(:all) do
           #  it 'Should create object' do
           @data = {'a' => 'b', 'c' => 'd'}
           @object = @group.new_object(@data)
           @object.create.code.should eq 201
-          binding.pry
         end
 
         it 'Should get object' do
