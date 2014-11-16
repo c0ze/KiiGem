@@ -1,2 +1,8 @@
-LIB_PATH = "./lib/Kii"
-Dir["#{LIB_PATH}/*.rb"].each {|file| require file }
+require 'Kii/constants'
+require 'Kii/kii_api'
+require 'Kii/kii_app'
+require 'Kii/kii_bucket'
+require 'Kii/kii_group'
+require 'Kii/kii_object'
+require 'Kii/kii_user'
+require 'Kii/version'
