@@ -6,3 +6,4 @@ app_name: ''
 mail_address: ''
 description: ''
 country:''
+debug: true

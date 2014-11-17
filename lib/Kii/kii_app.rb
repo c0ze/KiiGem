@@ -19,12 +19,12 @@ class KiiApp
   include KiiAPI
 
 
-  @@conf_keys = ['app_id', 'app_key', 'client_id', 'client_secret', 'country']
+  @@conf_keys = ['app_id', 'app_key', 'client_id', 'client_secret', 'country', 'debug']
 
 
   def initialize
     configure
-    @@log = Logger.new STDOUT
+    @@log = @debug ? Logger.new(STDOUT) : Logger.new('/dev/null')
     @paths = {
       token:    "#{@@api_backend}/oauth2/token",
       app:      "#{@@api_backend}/apps/#{@app_id}",
