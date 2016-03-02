@@ -1,9 +1,9 @@
-Kii Ruby Library
+Kii Ruby Library [![Build Status](https://travis-ci.org/c0ze/KiiGem.svg?branch=master)](https://travis-ci.org/c0ze/KiiGem)
 ==========
 
 Kii Cloud Library for Ruby. This library provides APIs for Kii Cloud and data structures.
 
-Currently in development, limited support for now.
+Currently in development, limited support for now. 
 
 Getting started
 ===============
