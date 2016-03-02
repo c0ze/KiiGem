@@ -6,59 +6,38 @@ require 'pry'
 
 require_relative 'constants'
 require_relative 'kii_object'
+require_relative 'kii_config'
 require_relative 'kii_user'
 require_relative 'kii_api'
 require_relative 'kii_bucket'
 
 class KiiApp
 
-  attr_accessor :access_token, :paths, :app_id, :app_key, :client_id, :client_secret, :app_name, :mail_address, :description, :debug, :log
+  attr_accessor :access_token, :paths, :log, :config
 
   include KiiObjectPersistance
   include KiiUserPersistance
   include KiiAPI
 
-
-  @@conf_keys = ['app_id', 'app_key', 'client_id', 'client_secret', 'country', 'debug']
-
-
   def initialize
-    configure
-    @@log = @debug ? Logger.new(STDOUT) : Logger.new('/dev/null')
+    @config = KiiConfig.new
+
+    @@log = @config.debug ? Logger.new(STDOUT) : Logger.new('/dev/null')
+
     @paths = {
-      token:    "#{@@api_backend}/oauth2/token",
-      app:      "#{@@api_backend}/apps/#{@app_id}",
-      user:     "#{@@api_backend}/apps/#{@app_id}/users"
+      token:    "#{@config.backend}/oauth2/token",
+      app:      "#{@config.backend}/apps/#{@config.app_id}",
+      user:     "#{@config.backend}/apps/#{@config.app_id}/users"
     }
-  end
-
-  def configure
-    config = YAML.load_file './config/kii.yml'
-    @@conf_keys.each { |key|
-      if config[key].nil? || config[key] == '' then
-        puts "config error. Please set #{key} in config/kii.yml"
-        exit 2
-      end
-      instance_variable_set("@#{key}", config[key]) unless config[key].nil?
-    }
-    set_api_backend
-  end
-
-  def set_api_backend
-    case @country
-    when 'us'
-      @@api_backend = KII_US
-    when 'jp'
-      @@api_backend = KII_JP
-    else
-      raise "Unknown API Backend"
-    end
   end
 
   def get_admin_token
-    @@log.debug "#{__method__}: #{@app_id} #{@app_key} #{@client_id} #{@client_secret}"
+    @@log.debug "#{__method__}: #{@config.app_id} #{@config.app_key} #{@config.client_id} #{@config.client_secret}"
 
-    d = {'client_id' => @client_id, 'client_secret' => @client_secret}.to_json
+    d = {
+      'client_id' => @config.client_id,
+      'client_secret' => @config.client_secret
+    }.to_json
     response = request :post, @paths[:token], d
 
     @access_token = (JSON.parse response)['access_token']
