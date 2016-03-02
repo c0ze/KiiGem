@@ -37,7 +37,7 @@ module KiiGroupPersistance
       response
     end
 
-    def delete 
+    def delete
       @context.request :delete, "#{@path}/#{@id}"
     end
 

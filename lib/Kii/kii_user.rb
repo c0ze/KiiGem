@@ -17,8 +17,8 @@ module KiiUserPersistance
         instance_variable_set("@#{k}", v) unless v.nil?
       end
       @app = app
-      @app_id = app.app_id
-      @app_key = app.app_key
+      @app_id = app.config.app_id
+      @app_key = app.config.app_key
       @path = path
     end
 
@@ -34,7 +34,7 @@ module KiiUserPersistance
     end
 
 
-    def delete 
+    def delete
       @app.request :delete, "#{@path}/#{@id}"
     end
 
@@ -70,13 +70,13 @@ module KiiUserPersistance
 
     def object minimum = false
       h = {
-        loginName: @login_name, 
-        displayName: @display_name, 
-        country: @country, 
+        loginName: @login_name,
+        displayName: @display_name,
+        country: @country,
         password: @password
       }
-      h.merge!({ 
-        emailAddress: @email, 
+      h.merge!({
+        emailAddress: @email,
         phoneNumber: @phone_number
       }) unless minimum
       h

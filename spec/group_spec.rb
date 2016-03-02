@@ -1,11 +1,19 @@
 require_relative '../lib/Kii/kii_app'
 require_relative '../lib/Kii/kii_group'
+require_relative 'spec_helper'
 
 describe KiiGroupPersistance::KiiGroup do
 
   before(:all) do
+    VCR.turn_on!
+    VCR.insert_cassette('group_specs', :record => :new_episodes)
     @app = KiiApp.new
     @app.get_admin_token
+  end
+
+  after(:all) do
+    VCR.eject_cassette
+    VCR.turn_off!
   end
 
   it 'Should get token' do

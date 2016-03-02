@@ -18,6 +18,10 @@ and get a command shell to run examples :
 
     bundle exec pry -r Kii
 
+Run the tests with
+
+    bundle exec rspec
+
 
 You can init your app with
 

@@ -1,0 +1,1264 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api-jp.kii.com/api/oauth2/token
+    body:
+      encoding: UTF-8
+      string: '{"client_id":"dummy","client_secret":"dummy"}'
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '131'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:26 GMT
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '200'
+      Content-Length:
+      - '169'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : "dummy",
+          "access_token" : "EmNGHHP4cTfNb1_03BDGKgGz1ehMDJ4LJOoLHeBTyGU",
+          "expires_in" : 2147483639,
+          "token_type" : "Bearer"
+        }
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:26 GMT
+- request:
+    method: post
+    uri: https://api-jp.kii.com/api/oauth2/token
+    body:
+      encoding: UTF-8
+      string: '{"client_id":"dummy","client_secret":"dummy"}'
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer EmNGHHP4cTfNb1_03BDGKgGz1ehMDJ4LJOoLHeBTyGU
+      Content-Length:
+      - '131'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:26 GMT
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '200'
+      Content-Length:
+      - '169'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : "dummy",
+          "access_token" : "kxI6OTxFlDMNBFBK9051n32-0XojgOKwa2bnty5Q4m0",
+          "expires_in" : 2147483639,
+          "token_type" : "Bearer"
+        }
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:26 GMT
+- request:
+    method: post
+    uri: https://api-jp.kii.com/api/apps/dummy/users
+    body:
+      encoding: UTF-8
+      string: '{"loginName":"your_username__3","displayName":"Your Name","country":"JP","password":"123456","emailAddress":"your__3@mail.com","phoneNumber":"09012341223"}'
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer kxI6OTxFlDMNBFBK9051n32-0XojgOKwa2bnty5Q4m0
+      Content-Length:
+      - '155'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Type:
+      - application/vnd.kii.RegistrationResponse+json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:26 GMT
+      Location:
+      - https://api-jp.kii.com/api/apps/dummy/users/c4619da00022-4579-5e11-060e-0f0a1c16
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '201'
+      Content-Length:
+      - '372'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "userID" : "c4619da00022-4579-5e11-060e-0f0a1c16",
+          "internalUserID" : 590251219503551488,
+          "loginName" : "your_username__3",
+          "displayName" : "Your Name",
+          "country" : "JP",
+          "emailAddress" : "your__3@mail.com",
+          "emailAddressVerified" : false,
+          "phoneNumber" : "+819012341223",
+          "phoneNumberVerified" : false,
+          "_hasPassword" : true,
+          "_disabled" : false
+        }
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:26 GMT
+- request:
+    method: post
+    uri: https://api-jp.kii.com/api/apps/dummy/users
+    body:
+      encoding: UTF-8
+      string: '{"loginName":"your_username__4","displayName":"Your Name","country":"JP","password":"123456","emailAddress":"your__4@mail.com","phoneNumber":"09012341224"}'
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer kxI6OTxFlDMNBFBK9051n32-0XojgOKwa2bnty5Q4m0
+      Content-Length:
+      - '155'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Type:
+      - application/vnd.kii.RegistrationResponse+json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:26 GMT
+      Location:
+      - https://api-jp.kii.com/api/apps/dummy/users/9980daa00022-1989-5e11-060e-02d23d16
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '201'
+      Content-Length:
+      - '372'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "userID" : "9980daa00022-1989-5e11-060e-02d23d16",
+          "internalUserID" : 590251219985895424,
+          "loginName" : "your_username__4",
+          "displayName" : "Your Name",
+          "country" : "JP",
+          "emailAddress" : "your__4@mail.com",
+          "emailAddressVerified" : false,
+          "phoneNumber" : "+819012341224",
+          "phoneNumberVerified" : false,
+          "_disabled" : false,
+          "_hasPassword" : true
+        }
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:26 GMT
+- request:
+    method: post
+    uri: https://api-jp.kii.com/api/oauth2/token
+    body:
+      encoding: UTF-8
+      string: '{"username":"your_username__3","password":"123456"}'
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '51'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:26 GMT
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '200'
+      Content-Length:
+      - '173'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : "c4619da00022-4579-5e11-060e-0f0a1c16",
+          "access_token" : "OjICANDhfBahk48L-Pschl1gYRIVe3N2fHla04btD6U",
+          "expires_in" : 2147483639,
+          "token_type" : "Bearer"
+        }
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:26 GMT
+- request:
+    method: post
+    uri: https://api-jp.kii.com/api/apps/dummy/groups
+    body:
+      encoding: UTF-8
+      string: '{"name":"test_group","owner":"c4619da00022-4579-5e11-060e-0f0a1c16","members":["9980daa00022-1989-5e11-060e-02d23d16"]}'
+    headers:
+      Accept:
+      - application/vnd.kii.GroupCreationResponse+json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/vnd.kii.GroupCreationRequest+json
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Authorization:
+      - Bearer OjICANDhfBahk48L-Pschl1gYRIVe3N2fHla04btD6U
+      Content-Length:
+      - '119'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Type:
+      - application/vnd.kii.GroupCreationResponse+json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:27 GMT
+      Location:
+      - https://api-jp.kii.com/api/apps/dummy/groups/mvzgbjmzx92m3iyt6r8htujxa
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '201'
+      Content-Length:
+      - '70'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "groupID" : "mvzgbjmzx92m3iyt6r8htujxa",
+          "notFoundUsers" : [ ]
+        }
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:27 GMT
+- request:
+    method: post
+    uri: https://api-jp.kii.com/api/apps/dummy/groups/mvzgbjmzx92m3iyt6r8htujxa/buckets/groupdata/objects
+    body:
+      encoding: UTF-8
+      string: '{"a":"b","c":"d"}'
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer OjICANDhfBahk48L-Pschl1gYRIVe3N2fHla04btD6U
+      Content-Length:
+      - '17'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Type:
+      - application/vnd.kii.ObjectCreationResponse+json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:27 GMT
+      Etag:
+      - '"1"'
+      Location:
+      - https://api-jp.kii.com/api/apps/dummy/groups/mvzgbjmzx92m3iyt6r8htujxa/buckets/rw:groupdata/objects/62112080-e060-11e5-8405-22000b02f3b7
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '201'
+      Content-Length:
+      - '123'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "objectID" : "62112080-e060-11e5-8405-22000b02f3b7",
+          "createdAt" : 1456914027144,
+          "dataType" : "application/json"
+        }
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:27 GMT
+- request:
+    method: get
+    uri: https://api-jp.kii.com/api/apps/dummy/groups/mvzgbjmzx92m3iyt6r8htujxa/buckets/groupdata/objects/62112080-e060-11e5-8405-22000b02f3b7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer OjICANDhfBahk48L-Pschl1gYRIVe3N2fHla04btD6U
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:27 GMT
+      Etag:
+      - '"1"'
+      Last-Modified:
+      - Wed, 02 Mar 2016 10:20:27 GMT
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '200'
+      Content-Length:
+      - '176'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"a":"b","c":"d","_owner":"c4619da00022-4579-5e11-060e-0f0a1c16","_created":1456914027144,"_id":"62112080-e060-11e5-8405-22000b02f3b7","_modified":1456914027144,"_version":"1"}'
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:27 GMT
+- request:
+    method: put
+    uri: https://api-jp.kii.com/api/apps/dummy/groups/mvzgbjmzx92m3iyt6r8htujxa/buckets/groupdata/objects/62112080-e060-11e5-8405-22000b02f3b7
+    body:
+      encoding: UTF-8
+      string: '{"arda":"rulezz"}'
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      If-Match:
+      - '1'
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer OjICANDhfBahk48L-Pschl1gYRIVe3N2fHla04btD6U
+      Content-Length:
+      - '17'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Type:
+      - application/vnd.kii.ObjectUpdateResponse+json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:27 GMT
+      Etag:
+      - '"2"'
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '200'
+      Content-Length:
+      - '65'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "createdAt" : 1456914027144,
+          "modifiedAt" : 1456914027415
+        }
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:27 GMT
+- request:
+    method: get
+    uri: https://api-jp.kii.com/api/apps/dummy/groups/mvzgbjmzx92m3iyt6r8htujxa/buckets/groupdata/objects/62112080-e060-11e5-8405-22000b02f3b7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer OjICANDhfBahk48L-Pschl1gYRIVe3N2fHla04btD6U
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:27 GMT
+      Etag:
+      - '"2"'
+      Last-Modified:
+      - Wed, 02 Mar 2016 10:20:27 GMT
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '200'
+      Content-Length:
+      - '176'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"arda":"rulezz","_owner":"c4619da00022-4579-5e11-060e-0f0a1c16","_created":1456914027144,"_id":"62112080-e060-11e5-8405-22000b02f3b7","_modified":1456914027415,"_version":"2"}'
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:27 GMT
+- request:
+    method: delete
+    uri: https://api-jp.kii.com/api/apps/dummy/groups/mvzgbjmzx92m3iyt6r8htujxa/buckets/groupdata/objects/62112080-e060-11e5-8405-22000b02f3b7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      If-Match:
+      - '2'
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer OjICANDhfBahk48L-Pschl1gYRIVe3N2fHla04btD6U
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Date:
+      - Wed, 02 Mar 2016 10:20:27 GMT
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '204'
+      X-Kii-Clientid:
+      - dummy
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:27 GMT
+- request:
+    method: get
+    uri: https://api-jp.kii.com/api/apps/dummy/groups/mvzgbjmzx92m3iyt6r8htujxa/buckets/groupdata/objects/62112080-e060-11e5-8405-22000b02f3b7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer OjICANDhfBahk48L-Pschl1gYRIVe3N2fHla04btD6U
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Language:
+      - en-US
+      Content-Type:
+      - application/vnd.kii.ObjectNotFoundException+json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:27 GMT
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '404'
+      Content-Length:
+      - '376'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "errorCode" : "OBJECT_NOT_FOUND",
+          "message" : "The object with ID 62112080-e060-11e5-8405-22000b02f3b7 was not found in bucket groupdata of the requested scope",
+          "objectScope" : {
+            "appID" : "dummy",
+            "groupID" : "mvzgbjmzx92m3iyt6r8htujxa",
+            "type" : "APP_AND_GROUP"
+          },
+          "bucketID" : "groupdata",
+          "objectID" : "62112080-e060-11e5-8405-22000b02f3b7"
+        }
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:27 GMT
+- request:
+    method: post
+    uri: https://api-jp.kii.com/api/apps/dummy/groups/mvzgbjmzx92m3iyt6r8htujxa/buckets/group_bucket/objects
+    body:
+      encoding: UTF-8
+      string: '{"a":"b","c":"d"}'
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer OjICANDhfBahk48L-Pschl1gYRIVe3N2fHla04btD6U
+      Content-Length:
+      - '17'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Type:
+      - application/vnd.kii.ObjectCreationResponse+json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:27 GMT
+      Etag:
+      - '"1"'
+      Location:
+      - https://api-jp.kii.com/api/apps/dummy/groups/mvzgbjmzx92m3iyt6r8htujxa/buckets/rw:group_bucket/objects/627623e0-e060-11e5-8405-22000b02f3b7
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '201'
+      Content-Length:
+      - '123'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "objectID" : "627623e0-e060-11e5-8405-22000b02f3b7",
+          "createdAt" : 1456914027806,
+          "dataType" : "application/json"
+        }
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:27 GMT
+- request:
+    method: get
+    uri: https://api-jp.kii.com/api/apps/dummy/groups/mvzgbjmzx92m3iyt6r8htujxa/buckets/group_bucket/objects/627623e0-e060-11e5-8405-22000b02f3b7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer OjICANDhfBahk48L-Pschl1gYRIVe3N2fHla04btD6U
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:27 GMT
+      Etag:
+      - '"1"'
+      Last-Modified:
+      - Wed, 02 Mar 2016 10:20:27 GMT
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '200'
+      Content-Length:
+      - '176'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"a":"b","c":"d","_owner":"c4619da00022-4579-5e11-060e-0f0a1c16","_created":1456914027806,"_id":"627623e0-e060-11e5-8405-22000b02f3b7","_modified":1456914027806,"_version":"1"}'
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:27 GMT
+- request:
+    method: put
+    uri: https://api-jp.kii.com/api/apps/dummy/groups/mvzgbjmzx92m3iyt6r8htujxa/buckets/group_bucket/objects/627623e0-e060-11e5-8405-22000b02f3b7
+    body:
+      encoding: UTF-8
+      string: '{"arda":"rulezz"}'
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      If-Match:
+      - '1'
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer OjICANDhfBahk48L-Pschl1gYRIVe3N2fHla04btD6U
+      Content-Length:
+      - '17'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Type:
+      - application/vnd.kii.ObjectUpdateResponse+json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:28 GMT
+      Etag:
+      - '"2"'
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '200'
+      Content-Length:
+      - '65'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "createdAt" : 1456914027806,
+          "modifiedAt" : 1456914028058
+        }
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:28 GMT
+- request:
+    method: get
+    uri: https://api-jp.kii.com/api/apps/dummy/groups/mvzgbjmzx92m3iyt6r8htujxa/buckets/group_bucket/objects/627623e0-e060-11e5-8405-22000b02f3b7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer OjICANDhfBahk48L-Pschl1gYRIVe3N2fHla04btD6U
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:28 GMT
+      Etag:
+      - '"2"'
+      Last-Modified:
+      - Wed, 02 Mar 2016 10:20:28 GMT
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '200'
+      Content-Length:
+      - '176'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"arda":"rulezz","_owner":"c4619da00022-4579-5e11-060e-0f0a1c16","_created":1456914027806,"_id":"627623e0-e060-11e5-8405-22000b02f3b7","_modified":1456914028058,"_version":"2"}'
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:28 GMT
+- request:
+    method: delete
+    uri: https://api-jp.kii.com/api/apps/dummy/groups/mvzgbjmzx92m3iyt6r8htujxa/buckets/group_bucket/objects/627623e0-e060-11e5-8405-22000b02f3b7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      If-Match:
+      - '2'
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer OjICANDhfBahk48L-Pschl1gYRIVe3N2fHla04btD6U
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Date:
+      - Wed, 02 Mar 2016 10:20:28 GMT
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '204'
+      X-Kii-Clientid:
+      - dummy
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:28 GMT
+- request:
+    method: get
+    uri: https://api-jp.kii.com/api/apps/dummy/groups/mvzgbjmzx92m3iyt6r8htujxa/buckets/group_bucket/objects/627623e0-e060-11e5-8405-22000b02f3b7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer OjICANDhfBahk48L-Pschl1gYRIVe3N2fHla04btD6U
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Language:
+      - en-US
+      Content-Type:
+      - application/vnd.kii.ObjectNotFoundException+json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:28 GMT
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '404'
+      Content-Length:
+      - '382'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "errorCode" : "OBJECT_NOT_FOUND",
+          "message" : "The object with ID 627623e0-e060-11e5-8405-22000b02f3b7 was not found in bucket group_bucket of the requested scope",
+          "objectScope" : {
+            "appID" : "dummy",
+            "groupID" : "mvzgbjmzx92m3iyt6r8htujxa",
+            "type" : "APP_AND_GROUP"
+          },
+          "bucketID" : "group_bucket",
+          "objectID" : "627623e0-e060-11e5-8405-22000b02f3b7"
+        }
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:28 GMT
+- request:
+    method: delete
+    uri: https://api-jp.kii.com/api/apps/dummy/users/c4619da00022-4579-5e11-060e-0f0a1c16
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer kxI6OTxFlDMNBFBK9051n32-0XojgOKwa2bnty5Q4m0
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Date:
+      - Wed, 02 Mar 2016 10:20:28 GMT
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '204'
+      X-Kii-Clientid:
+      - dummy
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:28 GMT
+- request:
+    method: delete
+    uri: https://api-jp.kii.com/api/apps/dummy/users/9980daa00022-1989-5e11-060e-02d23d16
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer kxI6OTxFlDMNBFBK9051n32-0XojgOKwa2bnty5Q4m0
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Date:
+      - Wed, 02 Mar 2016 10:20:28 GMT
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '204'
+      X-Kii-Clientid:
+      - dummy
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:28 GMT
+- request:
+    method: get
+    uri: https://api-jp.kii.com/api/apps/dummy/users/c4619da00022-4579-5e11-060e-0f0a1c16
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      X-Kii-Appid:
+      - dummy
+      X-Kii-Appkey:
+      - dummy
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer kxI6OTxFlDMNBFBK9051n32-0XojgOKwa2bnty5Q4m0
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With, ETag, X-Step-Count
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Content-Language:
+      - en-US
+      Content-Type:
+      - application/vnd.kii.UserNotFoundException+json;charset=UTF-8
+      Date:
+      - Wed, 02 Mar 2016 10:20:28 GMT
+      Server:
+      - nginx
+      X-Http-Status-Code:
+      - '404'
+      Content-Length:
+      - '161'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "errorCode" : "USER_NOT_FOUND",
+          "message" : "User c4619da00022-4579-5e11-060e-0f0a1c16 was not found",
+          "value" : "c4619da00022-4579-5e11-060e-0f0a1c16"
+        }
+    http_version: 
+  recorded_at: Wed, 02 Mar 2016 10:20:28 GMT

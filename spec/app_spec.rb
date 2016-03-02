@@ -1,10 +1,18 @@
 require_relative '../lib/Kii/kii_app'
+require_relative 'spec_helper'
 
 describe KiiApp do
 
   before(:all) do
+    VCR.turn_on!
+    VCR.insert_cassette('app_specs', :record => :new_episodes)
     @app = KiiApp.new
     @app.get_admin_token
+  end
+
+  after(:all) do
+    VCR.eject_cassette
+    VCR.turn_off!
   end
 
   it 'Should get token' do
@@ -16,7 +24,7 @@ describe KiiApp do
 
 
   context 'App scope data object - default bucket' do
-    before(:all) do 
+    before(:all) do
 #  it 'Should create object' do
       @data = {'a' => 'b', 'c' => 'd'}
       @object = @app.new_object(@data)
@@ -49,7 +57,7 @@ describe KiiApp do
 
 
   context 'App scope data object - custom bucket' do
-    before(:all) do 
+    before(:all) do
 #  it 'Should create object' do
       @data = {'a' => 'b', 'c' => 'd'}
       @bucket = 'some_bucket'

@@ -3,7 +3,7 @@
 .bundle
 .config
 .yardoc
-.env
+.env*
 Gemfile.lock
 InstalledFiles
 _yardoc
@@ -16,4 +16,4 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
-config/kii.yml
+vendor

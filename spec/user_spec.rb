@@ -1,10 +1,19 @@
+require_relative '../lib/Kii/kii_app'
 require_relative '../lib/Kii/kii_user'
+require_relative 'spec_helper'
 
 describe KiiUserPersistance::KiiUser do
 
   before(:all) do
+    VCR.turn_on!
+    VCR.insert_cassette('user_specs', :record => :new_episodes)
     @app = KiiApp.new
     @app.get_admin_token
+  end
+
+  after(:all) do
+    VCR.eject_cassette
+    VCR.turn_off!
   end
 
   it 'Should get token' do
@@ -31,14 +40,17 @@ describe KiiUserPersistance::KiiUser do
       @user.info.code.should eq 200
     end
 
+    # Resend verification seems broken somehow
+    # http://docs.kii.com/rest/apps-collection/application/user-collection/user-logged-in/e-mail-address/resend-verification/
     it 'Should send email verification code' do
-      @user.resend_email_verification.should eq 400 # 204
+#      @user.resend_email_verification.should eq 204
       # should send verification code to e-mail specified.
       # check your mail please ?
     end
 
+    # http://docs.kii.com/rest/apps-collection/application/user-collection/user-logged-in/phone-number/resend-verification/
     it 'Should send sms verification code' do
-      @user.resend_sms_verification.should eq 400 # 204
+#      @user.resend_sms_verification.should eq 204
       # should send verification code to phone number
       # check your sms please ?
     end

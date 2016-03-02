@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+  - 2.2.3
+script: bundle exec rspec
+env:
+  global:
+    - APP_ID="dummy"
+    - APP_KEY="dummy"
+    - CLIENT_ID="dummy"
+    - CLIENT_SECRET="dummy"
+    - APP_NAME="KiiGem"
+    - MAIL_ADDRESS="akaraduman@gmail.com"
+    - DESCRIPTION="KiiGem Demo"
+    - COUNTRY="JP"
+    - DEBUG=true
